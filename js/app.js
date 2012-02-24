@@ -1,114 +1,76 @@
-var m;
+var m, interaction;
 var mm = com.modestmaps;
-var baselayer = 'mapbox.world-bright';
-var borders = 'djohnson.superpacs';
-var nationalPointData = '';
+var baselayer = 'djohnson.world-dark';
+var borders = 'mapbox.world-borders-light';
 var subNationalPointData = '';
-var activeLayer = '';
+var activelayer = 'djohnson.superpac';
 var layers = [
         baselayer,
-        activeLayer,
         borders,
-        nationalPointData,
-        subNationalPointData
+        activelayer
     ];
 
+_.each(['totals','obama','romney', 'gingrich', 'paul', 'santorum'], function(candidate) {
+
+    $('#' + candidate).click(function(e) {
+       
+        $('.description').hide();
+        $('#' + candidate + '-description').show();
+    });
+});
+
+
 wax.tilejson('http://api.tiles.mapbox.com/v2/' + layers + '.jsonp', function(tilejson) {
-    tilejson.minzoom = 2;
-      tilejson.maxzoom = 7;
+    tilejson.minzoom = 3;
+      tilejson.maxzoom = 5;
     m = new mm.Map('map', new wax.mm.connector(tilejson), null, [
         new mm.MouseHandler(),
         new mm.TouchHandler()
         ]
+       
     );
-    m.setCenterZoom(new mm.Location(36,-94), 4);
-    tilejson.attribution = 'Powered by open source <a href="http://tilemill.com" target="_blank"> TileMill</a> ';
-    wax.mm.legend(m, tilejson).appendTo(m.parent);
-    wax.mm.interaction(m, tilejson);
-    wax.mm.attribution(m, tilejson).appendTo(m.parent);
-    wax.mm.zoomer(m, tilejson).appendTo($('#controls')[0]);
-    wax.mm.bwdetect(m, {
-        auto: true,
-        png: '.png64?'
+    m.setCenterZoom(new mm.Location(32,-95), 4);
+     tilejson.attribution = 'Powered by open source <a href="http://tilemill.com" target="_blank"> TileMill</a> ';
+        wax.mm.legend(m, tilejson).appendTo(m.parent);
+        interaction = wax.mm.interaction(m, tilejson);
+        wax.mm.attribution(m, tilejson).appendTo(m.parent);
+        wax.mm.zoomer(m, tilejson).appendTo($('#controls')[0]);
+        wax.mm.bwdetect(m, {
+            auto: true,
+            png: '.png64?'
+        });
     });
-});
+   
 
-$(document).ready(function()
-{
-    //set the originals
-    var originalWinWidth = $(window).width();
- 
-    //set the original font size
-    var originalFontSize = 30;
- 
-    //set the ratio of change for each size change
-    var ratioOfChange = 50;
- 
-    //set the font size using jquery
-    $("about").css("font-size", originalFontSize);
- 
-    $(window).resize(function()
-    {
-        //get the width and height as the window resizes
-        var winWidth = $(window).width();
- 
-        //get the difference in width
-        var widthDiff = winWidth - originalWinWidth;
- 
-        //check if the window is larger or smaller than the original
-        if(widthDiff > 0)
-        {
-            //our window is larger than the original so increase font size
-            var pixelsToIncrease = Math.round(widthDiff / ratioOfChange);
- 
-            //calculate the new font size
-            var newFontSize = originalFontSize + pixelsToIncrease;
- 
-            //set new font size
-            $("about").css("font-size", newFontSize);
-        }
-        else
-        {
-            //our window is smaller than the original so decrease font size
-            var pixelsToDecrease = Math.round(Math.abs(widthDiff) / ratioOfChange);
- 
-            //calculate the new font size
-            var newFontSize = originalFontSize - pixelsToDecrease;
- 
-            //set the new font size
-            $("about").css("font-size", newFontSize);
-        }
-    })
-});
 
 function refreshMap(layers) {
-    wax.tilejson('http://api.tiles.mapbox.com/v2/' + layers + '.jsonp', function (tilejson) {
-          tilejson.minzoom = 2;
-          tilejson.maxzoom = 7;
-          m.setProvider(new wax.mm.connector(tilejson));
-          $('.wax-legends').remove();
-          wax.mm.legend(m, tilejson).appendTo(m.parent);
-          interaction.remove();
-          wax.mm.interaction(m, tilejson);
-      });
-}
+       wax.tilejson('http://api.tiles.mapbox.com/v2/' + layers + '.jsonp', function(tilejson) {
+              tilejson.minzoom = 2;
+              tilejson.maxzoom = 7;
+              m.setProvider(new wax.mm.connector(tilejson));
+              $('.wax-legends').remove();
+              wax.mm.legend(m, tilejson).appendTo(m.parent);
+              interaction.remove();
+              interaction = wax.mm.interaction(m, tilejson);
+          });
+    }
 
 // TODO: Change this
 $(document).ready(function () {
 
     // Layer Selection
-    $('ul.layers li a').click(function (e) {
+    $('ul li a').click(function (e) {
         e.preventDefault();
         if (!$(this).hasClass('active')) {
-            $('ul.layers li a').removeClass('active');
+            $('ul li a').removeClass('active');
+            
             $(this).addClass('active');
-            var activeLayer = $(this).attr('data-layer');
+     
+            var activelayer = $(this).attr('data-layer');
             layers = [
                 baselayer,
-                activeLayer,
                 borders,
-                nationalPointData,
-                subNationalPointData
+                activelayer
             ];
             refreshMap(layers);
         }
