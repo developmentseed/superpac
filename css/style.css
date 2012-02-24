@@ -17,8 +17,8 @@ h1,h2,h3,h4,h5,h6 {
   }
 h1 {
     font-size: 22px;
-    font-weight: normal;
-    color:#E5E5E5;
+    font-weight: bold;
+    color:#999999;
 }
 h2 {
   font-size: 18px;
@@ -122,7 +122,8 @@ table tr + tr td {
 
 .red {
       color:#E36B69	;
-      font-size: 22px;
+      font-size: 145%;
+      font-weight:bold;
       text-shadow: #fff;
   }
 
@@ -195,14 +196,14 @@ ul.map-navigation {
       transition: background-color 0.1s linear;
       position: relative;
       border-bottom: 3px solid #334345;
-      }
-      ul.map-navigation li a.active,
+  }
       ul.map-navigation li a:hover {
           background-color: rgb(227, 107, 97);
           }
-      ul.map-navigation li a:active {
-          background-color: #000;
-          }
+      ul.map-navigation li a.active {
+          background: rgba(20,20,20,.9);
+          border-bottom: 3px  solid rgb(20,20,20);
+      }
       ul.map-navigation li a.one {
         border-right: none;
         }
@@ -309,7 +310,6 @@ ul.map-navigation {
   transition: top 3s !important;  
   -webkit-user-select:auto;
   width: 380px;
-  height: 60%;
   max-height: 70%;
   overflow: auto;
   right:0px;
