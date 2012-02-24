@@ -85,8 +85,8 @@ a.close {
   Data Table: For the project popup.
 -------------------------------------*/
 
-table {
-  width: 90%;
+#about table {
+  width: 100%;
   margin-bottom: 18px;
   padding: 0;
   border-collapse: separate;
@@ -110,7 +110,7 @@ table td {
   border-top: 1px solid #7F7F7F;
   font-size: 13px;
   }
-table tr + tr td {
+#about table tr + tr td {
   border-top: 1px solid #7F7F7F;
   color: #A5A5A5;
   }
@@ -203,6 +203,8 @@ ul.map-navigation {
       ul.map-navigation li a.active {
           background: rgba(20,20,20,.9);
           border-bottom: 3px  solid rgb(20,20,20);
+          border-right: 2px solid rgb(51,67,69);
+          border-left: 2px solid rgb(51,67,69);
       }
       ul.map-navigation li a.one {
         border-right: none;
@@ -297,9 +299,9 @@ ul.map-navigation {
 
 /* Interaction */
 .wax-tooltip {
-  background: #fff;
+  background: rgba(20,20,20,.9);
   border: 1px solid #7A7979;
-  color: #000;
+  color: #fff;
   -moz-box-shadow: 0 0 6px rgba(0, 0, 0, .3);
   -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, .3);
   box-shadow: 0 0 6px rgba(0, 0, 0, .3);
@@ -309,7 +311,7 @@ ul.map-navigation {
   -webkit-transition: top 3s !important;
   transition: top 3s !important;  
   -webkit-user-select:auto;
-  width: 380px;
+  max-width: 320px;
   max-height: 70%;
   overflow: auto;
   right:0px;
@@ -321,6 +323,14 @@ ul.map-navigation {
 
     font-size: 12px;
     }
+  .wax-tooltip table {
+      width: 92%;
+      padding: 0;
+  }
+  .wax-tooltip h3 {
+      color: #fff;
+      font-size: 95%;
+  }
   .wax-tooltip h6{
     line-height: 16px;
     font-size: 14px;
@@ -331,9 +341,9 @@ ul.map-navigation {
   .wax-tooltip th{
     font-size: 13px;
     }
-  .wax-tooltip tbody{
-      color: #000;
-        font-size: 12px;
+  .wax-tooltip tbody {
+      color: #CCCCCC;
+        font-size: 11px;
         }
 
 /*CSS Animations*/
