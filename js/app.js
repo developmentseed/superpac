@@ -3,7 +3,7 @@ var mm = com.modestmaps;
 var baselayer = 'djohnson.world-dark';
 var borders = 'mapbox.world-borders-light';
 var subNationalPointData = '';
-var activelayer = 'djohnson.superpac';
+var activelayer = 'djohnson.superpacs-final';
 var layers = [
         baselayer,
         borders,

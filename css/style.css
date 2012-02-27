@@ -174,15 +174,16 @@ ul.map-navigation {
   }
   ul.map-navigation li {
     float: left;
-    width: 16.6667%;
+    width: 16.66677778888888%;
     margin: 0;
     padding: 0;
     }
     ul.map-navigation li a {
-      background: rgba(135, 152, 149, 0.90);
+      background: rgb(227, 107, 97);rgba(135, 152, 149, 0.90);
       text-decoration: none;
       color: #fefefe;
-      font-size: 18px;
+      font-size: 16px;
+      font-weight: bold;
       display: block;
       text-align: center;
       height: 34px;
@@ -198,11 +199,11 @@ ul.map-navigation {
       border-bottom: 3px solid #334345;
   }
       ul.map-navigation li a:hover {
-          background-color: rgb(227, 107, 97);
+          background-color:rgba(135, 152, 149, 0.90);
           }
       ul.map-navigation li a.active {
           background: rgba(20,20,20,.9);
-          border-bottom: 3px  solid rgb(20,20,20);
+          border-bottom: 3px  solid rgb(43,43,43);
           border-right: 2px solid rgb(51,67,69);
           border-left: 2px solid rgb(51,67,69);
       }
@@ -329,6 +330,7 @@ ul.map-navigation {
   }
   .wax-tooltip h3 {
       color: #fff;
+      font-weight: bold;
       font-size: 95%;
   }
   .wax-tooltip h6{
