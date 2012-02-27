@@ -3,7 +3,7 @@ var mm = com.modestmaps;
 var baselayer = 'djohnson.world-dark';
 var borders = 'mapbox.world-borders-light';
 var subNationalPointData = '';
-var activelayer = 'djohnson.superpacs-final';
+var activelayer = 'djohnson.final-superpac';
 var layers = [
         baselayer,
         borders,
@@ -45,8 +45,8 @@ wax.tilejson('http://api.tiles.mapbox.com/v2/' + layers + '.jsonp', function(til
 
 function refreshMap(layers) {
        wax.tilejson('http://api.tiles.mapbox.com/v2/' + layers + '.jsonp', function(tilejson) {
-              tilejson.minzoom = 2;
-              tilejson.maxzoom = 7;
+              tilejson.minzoom = 3;
+              tilejson.maxzoom = 5;
               m.setProvider(new wax.mm.connector(tilejson));
               $('.wax-legends').remove();
               wax.mm.legend(m, tilejson).appendTo(m.parent);

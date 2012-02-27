@@ -12,13 +12,13 @@ html,body {
   Typography
 -------------------------------------*/
 h1,h2,h3,h4,h5,h6 {
-  color: #fff;
+
   font-weight: normal;
   }
 h1 {
     font-size: 22px;
     font-weight: bold;
-    color:#999999;
+    color:#DBDBDB;
 }
 h2 {
   font-size: 18px;
@@ -86,9 +86,9 @@ a.close {
 -------------------------------------*/
 
 #about table {
-  width: 100%;
+  width: 95%;
   margin-bottom: 18px;
-  padding: 0;
+  padding-left: 20px;
   border-collapse: separate;
   *border-collapse: collapse;
   /* IE7, collapse table to remove spacing */
@@ -121,7 +121,7 @@ table td {
 
 
 .red {
-      color:#E36B69	;
+      color:rgb(230,69,64);
       font-size: 145%;
       font-weight:bold;
       text-shadow: #fff;
@@ -145,17 +145,30 @@ table td {
     color: #a5a5a5;
 }
 #about h1, h2, h3, table, em {
-    margin-left: 18px;
+    padding-left: 20px;
     margin-top: 22px;
 }
 #about em {
-    font-size: 14px;
+    font-size: 16px;
     color: #a5a5a5;
 }
 .description {
     width: 100%;
 }
-
+#about h6 {
+    padding-top: 16px;
+    font-size: 13px;
+    color: #a5a5a5;
+    padding-left: 20px;
+}
+#about a {
+    font-size: 13px;
+    color: #b4b4b4;
+}
+#about a:hover {
+    font-size: 13px;
+    color: #fefefe;
+}
 /*-----------------------------------
 Navigation
 ----------------------------------*/
@@ -179,7 +192,7 @@ ul.map-navigation {
     padding: 0;
     }
     ul.map-navigation li a {
-      background: rgb(227, 107, 97);rgba(135, 152, 149, 0.90);
+      background: rgb(230,69,64);
       text-decoration: none;
       color: #fefefe;
       font-size: 16px;
@@ -324,9 +337,9 @@ ul.map-navigation {
 
     font-size: 12px;
     }
-  .wax-tooltip table {
-      width: 92%;
-      padding: 0;
+  .wax-tooltip table, tbody {
+      width: 90%;
+      padding-left: 15px;
   }
   .wax-tooltip h3 {
       color: #fff;
@@ -400,7 +413,7 @@ ul.map-navigation {
   z-index: 9999;
   width: 50%;
   margin-left: -25%;
-  background: #fff;
+  background: rgba(20,20,20,.95);
   -moz-transition: top 0.5s ease;
   -o-transition: top 0.5s ease;
   -webkit-transition: top 0.5s ease;
@@ -418,15 +431,17 @@ ul.map-navigation {
   resize: none;
   padding: 10px;
   color: #404040;
-  line-height: 20px;
+  line-height: 18px;
   width: 340px;
+  padding-left: 20px;
   }
 #twitter,
 #facebook {
   display: inline-block;
   position: relative;
-  padding: 2px 18px;
+  padding: 5px 18px;
   margin-right: 5px;
+  padding-left: 10px;
   background: white;
   color: white;
   font-weight: bold;
@@ -441,37 +456,3 @@ ul.map-navigation {
   background: #359;
   border-color: #68c;
   }
-#data {
-    position: absolute;
-    top: 80px;
-    left: 10px;
-    z-index: 10000;
-    width: 60px;
-    height: 38px;
-    background-color: #7c8c89;
-    border: 1px solid #A3B1AE;
-    color: #fff;
-    font-size: 100%;
-    -moz-box-shadow: 0 1px 8px rgba(0, 0, 0, .3);
-    -webkit-box-shadow: 0 1px 8px rgba(0, 0, 0, .3);
-    box-shadow: 0 1px 8px rgba(0, 0, 0, .3);
-    text-decoration: none;
-
-    }
-    #data a {
-         text-decoration: none;
-         color: #fff;
-         top: 5px;
-         padding-left: 4px;
-         padding-top: 10px;
-         
-         text-align: center;
-     }
-    #data:hover {
-           color: #888;
-          background-color :rgb(227, 107, 97);
-       }
-.text {
-    
-   margin-top: 10px;
-             }
