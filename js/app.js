@@ -1,10 +1,8 @@
-var m;
-var mm = com.modestmaps;
+var m,  interaction, mm = com.modestmaps;
 var baselayer = 'mapbox.world-bright';
 var borders = '';
 var subNationalPointData = '';
-var activelayer = 'djohnson.final-superpac';
-var activedescrip = $('.description.active');
+var activelayer = 'djohnson.superpacs-finals';
 var layers = [
         baselayer,
         borders,
@@ -33,7 +31,7 @@ wax.tilejson('http://api.tiles.mapbox.com/v2/' + layers + '.jsonp', function(til
        
     );
         m.setCenterZoom(new mm.Location(38,-76), 4);
-        tilejson.attribution = 'Maps made with open source <a href="http://tilemill.com" target="_blank"> TileMill</a>.  <a href="http://reporting.sunlightfoundation.com/super-pacs/file-downloads/">Get the Data</a> from the Sunlight Foundation.'
+        tilejson.attribution = 'Maps made with open source <a href="http://tilemill.com" target="_blank"> TileMill</a>.  <a href="http://reporting.sunlightfoundation.com/super-pacs/file-downloads/">Data</a> from the Sunlight Foundation from <a href="http://www.fec.gov/data/IndependentExpenditure.do?format=html&election_yr=2012"/>FEC</a>, Februrary 22, 2012. Data covers November 22, 2011 to February 22, 2012.'
         ;
         
         myTooltip = new wax.tooltip;
@@ -45,7 +43,10 @@ wax.tilejson('http://api.tiles.mapbox.com/v2/' + layers + '.jsonp', function(til
             $('#tooltips').html('');
         }
 
-        wax.mm.interaction(m, tilejson, {callbacks: myTooltip,});
+        interaction = wax.mm.interaction(m, tilejson, {callbacks: myTooltip,clickAction: ['full', 'teaser', 'location']});
+           tilejson.minzoom = 3;
+           tilejson.maxzoom = 5;
+           m.setProvider(new wax.mm.connector(tilejson));
         wax.mm.attribution(m, tilejson).appendTo(m.parent);
         wax.mm.zoomer(m, tilejson).appendTo($('#controls')[0]);
         wax.mm.bwdetect(m, {
@@ -58,22 +59,19 @@ wax.tilejson('http://api.tiles.mapbox.com/v2/' + layers + '.jsonp', function(til
 
 
 function refreshMap(layers) {
+    
        wax.tilejson('http://api.tiles.mapbox.com/v2/' + layers + '.jsonp', function(tilejson) {
-              interaction = wax.mm.interaction(m, tilejson, {callbacks: myTooltip,})
+               tilejson.minzoom = 3;
+               tilejson.maxzoom = 5;
+               m.setProvider(new wax.mm.connector(tilejson));
+               $('#tooltips').empty();
                interaction.remove();
-                interaction = wax.mm.interaction(m, tilejson, {callbacks: myTooltip,});;
-              tilejson.minzoom = 3;
-              tilejson.maxzoom = 5;
-              m.setProvider(new wax.mm.connector(tilejson));
-            
-             
+               legend = wax.mm.legend(m, tilejson).appendTo(document.getElementById('tooltips'));
+               interaction = wax.mm.interaction(m, tilejson, { callbacks: myTooltip }); 
           });
     }
 
 // TODO: Change this
-
-
-
 
 
 $(document).ready(function () {
@@ -84,16 +82,13 @@ $(document).ready(function () {
         if (!$(this).hasClass('active')) {
             $('ul li a').removeClass('active');
             
-        
-            
             $(this).addClass('active');
             
-            
-            var activelayer = $(this).attr('data-layer');
+            var activeLayer = $(this).attr('data-layer');
             layers = [
                 baselayer,
-                borders,
-                activelayer
+                borders, 
+                activeLayer
             ];
             refreshMap(layers);
         }

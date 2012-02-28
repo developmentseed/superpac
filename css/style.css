@@ -88,7 +88,7 @@ a.close {
 #about table {
   width: 95%;
   margin-bottom: 18px;
-  padding-left: 20px;
+  padding-left: 18px;
   border-collapse: separate;
   *border-collapse: collapse;
   /* IE7, collapse table to remove spacing */
@@ -155,6 +155,7 @@ table td {
 #about em {
     font-size: 16px;
     color: #a5a5a5;
+    
     padding-left: 20px;
     line-height: 22px;
 }
@@ -199,6 +200,7 @@ Navigation
  font-size: 126%;
  color: #fff;
 } 
+
 #map-navigation {
   position: fixed;
   width: 42.8%;
@@ -223,7 +225,7 @@ Navigation
  
 }
     #map-navigation li a {
-      background: rgba(135, 152, 149, 0.96);
+      background: rgba(135, 152, 149, 0.6);
       text-decoration: none;
       color: #fefefe;
       font-size: 13px;
@@ -246,7 +248,7 @@ Navigation
           background-color: #6B7876;
           }
       #map-navigation li a.active {
-          background: rgba(30,30,30,.85);
+          background: rgba(40,40,40,.5);
         
           border-right: 1px solid #444;
           border-left: 1px solid #444;
@@ -347,17 +349,12 @@ Navigation
     position: absolute;
     bottom: 10px;
     left: 10px;
-    font-size: 80%;
-    color: #fff;
-}
-.wax-attribution  {
-    z-index: 10000;
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    font-size: 80%;
+    font-size: 75%;
     color: #000;
+    width: 48%;
+    line-height: 16px;
 }
+
 
 /* Interaction */
 
@@ -367,7 +364,7 @@ Navigation
   background: rgba(50,50,50,.7);
   color: #fff;
   bottom: 10px;
-  top: 20px;
+  top: 15px;
   -webkit-user-select:auto;
   width: 100%;
   overflow: auto;
