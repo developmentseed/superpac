@@ -1,5 +1,5 @@
 html,body {
- font-family:  ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;
+ font-family:  ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, sans-serif;
   color:#E5E8E8;
   position: absolute;
   width: 100%;
@@ -17,7 +17,7 @@ h1,h2,h3,h4,h5,h6 {
   }
 h1 {
     font-size: 22px;
-    font-weight: bold;
+    font-weight: regular;
     color:#DBDBDB;
 }
 h2 {
@@ -121,20 +121,22 @@ table td {
 
 
 .red {
-      color:rgb(230,69,64);
-      font-size: 145%;
-      font-weight:bold;
-      text-shadow: #fff;
+  color:rgb(230,69,64);
+  font-size: 110%; 
+  font-weight:bold;
+  text-shadow: #fff;
   }
 
 #about {
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  height: 30%;
-  width: 100%;
+  top: 52px;
+  right: 0; 
+  height: 100%;
+  width: 42.1%;
   z-index: 100;
   overflow: scroll;
-  background: rgba(20,20,20,.9);
+  background: rgba(30,30,30,.85);
   }
 #about h3 {
     font-size: 18px;
@@ -144,6 +146,8 @@ table td {
     font-size: 18px;
     color: #a5a5a5;
 }
+
+
 #about h1, h2, h3, table, em {
     padding-left: 20px;
     margin-top: 22px;
@@ -151,6 +155,8 @@ table td {
 #about em {
     font-size: 16px;
     color: #a5a5a5;
+    padding-left: 20px;
+    line-height: 22px;
 }
 .description {
     width: 100%;
@@ -172,55 +178,81 @@ table td {
 /*-----------------------------------
 Navigation
 ----------------------------------*/
-
-ul.map-navigation {
+#header {
   position: fixed;
   width: 100%;
-  height: 30px;
-  bottom: 31%;
-  z-index: 100;
+  height: 50px;
+  top: 0;
+  left: 0;
+  color: #fff;
+  z-index: 50;
   -moz-box-shadow: 0 8px 8px rgba(0, 0, 0, 0.10);
   -webkit-box-shadow: 0 8px 8px rgba(0, 0, 0, 0.10);
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.10);
   padding: 0;
   margin: 0;
+  background:rgba(135, 152, 149, 0.96);
   }
-  ul.map-navigation li {
-    float: left;
-    width: 16.66677778888888%;
-    margin: 0;
-    padding: 0;
-    }
-    ul.map-navigation li a {
-      background: rgb(230,69,64);
+#header h1 {
+ padding-left: 16px;
+ padding-top: 14px;
+ font-size: 126%;
+ color: #fff;
+} 
+#map-navigation {
+  position: fixed;
+  width: 42.8%;
+  right: 0;
+  top: 0;
+  color: #fff;
+  z-index: 500;
+  padding: 0;
+  margin: 0;
+ 
+  }
+
+  #map-navigation li {
+      float: right;
+      width: 12%;
+}
+  #map-navigation li.big {
+    width: 22%;
+}
+  #map-navigation li.med {
+    width: 17.7%;
+ 
+}
+    #map-navigation li a {
+      background: rgba(135, 152, 149, 0.96);
       text-decoration: none;
       color: #fefefe;
-      font-size: 16px;
-      font-weight: bold;
+      font-size: 13px;
+      top: 0;
       display: block;
       text-align: center;
-      height: 34px;
-      line-height: 41px;
+      height: 50px;
+      line-height: 55px;
       text-shadow: 0 -1px 0 rgba(0,0,0,0.55);
+      border-bottom: 2px solid #000;
       border-right: 1px solid #75807e;
       border-right: 1px solid 1px solid rgba(0,0,0,0.60);
       -moz-transition: background-color 0.1s linear;
       -o-transition: background-color 0.1s linear;
       -webkit-transition: background-color 0.1s linear;
-      transition: background-color 0.1s linear;
-      position: relative;
-      border-bottom: 3px solid #334345;
+      transition: background-color 0.1s linear; 
+      
   }
-      ul.map-navigation li a:hover {
-          background-color:rgba(135, 152, 149, 0.90);
+      #map-navigation li a:hover {
+          background-color: #6B7876;
           }
-      ul.map-navigation li a.active {
-          background: rgba(20,20,20,.9);
-          border-bottom: 3px  solid rgb(43,43,43);
-          border-right: 2px solid rgb(51,67,69);
-          border-left: 2px solid rgb(51,67,69);
+      #map-navigation li a.active {
+          background: rgba(30,30,30,.85);
+        
+          border-right: 1px solid #444;
+          border-left: 1px solid #444;
+          
       }
-      ul.map-navigation li a.one {
+      #map-navigation li a.one {
         border-right: none;
         }
         
@@ -246,10 +278,11 @@ ul.map-navigation {
 /* Map Controls */
 #controls {
   position: absolute;
-  top: 10px;
+  top: 60px;
   left: 10px;
   background: white;
-  border: 1px solid #7A7979;
+  border: 1px solid #000;
+  color: #000;
   -moz-box-shadow: 0 0 6px rgba(0, 0, 0, .3);
   -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, .3);
   box-shadow: 0 0 6px rgba(0, 0, 0, .3);
@@ -278,7 +311,7 @@ ul.map-navigation {
     width: 50px;
     padding: 0 5px;
     height: 27px;
-    border-top: 1px solid #666;
+    border-top: 1px solid #000;
     text-align: center;
     }
   #controls a.zoomer {
@@ -309,38 +342,45 @@ ul.map-navigation {
         color: #ccc;
         cursor: default;
         }
-
+.wax-attribution {
+    z-index: 10000;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 80%;
+    color: #fff;
+}
+.wax-attribution  {
+    z-index: 10000;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 80%;
+    color: #000;
+}
 
 /* Interaction */
-.wax-tooltip {
-  background: rgba(20,20,20,.9);
-  border: 1px solid #7A7979;
+
+
+#tooltips {
+   position: relative;
+  background: rgba(50,50,50,.7);
   color: #fff;
-  -moz-box-shadow: 0 0 6px rgba(0, 0, 0, .3);
-  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, .3);
-  box-shadow: 0 0 6px rgba(0, 0, 0, .3);
-     -webkit-transition-property: top !important;
-  -moz-transition: top 3s !important;
-  -o-transition: top 3s !important;
-  -webkit-transition: top 3s !important;
-  transition: top 3s !important;  
+  bottom: 10px;
+  top: 20px;
   -webkit-user-select:auto;
-  max-width: 320px;
-  max-height: 70%;
+  width: 100%;
   overflow: auto;
-  right:0px;
-  top: 0px;
-  position: absolute;
-  z-index: 200;
+  right: 0px;
+  z-index: 100;
   }
   .wax-tooltip em{
-
     font-size: 12px;
     }
   .wax-tooltip table, tbody {
       width: 90%;
       padding-left: 15px;
-  }
+  } 
   .wax-tooltip h3 {
       color: #fff;
       font-weight: bold;
