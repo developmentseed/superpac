@@ -19,11 +19,16 @@ var layers = [
         });
     });
 
+window.onload = function() { 
+       $('.description').hide();
+        $('#totals-description').show();
+    }
 
 
 wax.tilejson('http://api.tiles.mapbox.com/v2/' + layers + '.jsonp', function(tilejson) {
         tilejson.minzoom = 3;
         tilejson.maxzoom = 5;
+         b = new mm.Map('map', new wax.mm.connector(tilejson), null, null);
     m = new mm.Map('map', new wax.mm.connector(tilejson), null, [
         new mm.MouseHandler(),
         new mm.TouchHandler()
@@ -33,6 +38,7 @@ wax.tilejson('http://api.tiles.mapbox.com/v2/' + layers + '.jsonp', function(til
         m.setCenterZoom(new mm.Location(38,-76), 4);
         tilejson.attribution = 'Maps made with open source <a href="http://tilemill.com" target="_blank"> TileMill</a>.  <a href="http://reporting.sunlightfoundation.com/super-pacs/file-downloads/">Data</a> from the Sunlight Foundation from <a href="http://www.fec.gov/data/IndependentExpenditure.do?format=html&election_yr=2012"/>FEC</a>, Februrary 22, 2012. Data covers November 22, 2011 to February 22, 2012.'
         ;
+        
         
         myTooltip = new wax.tooltip;
         myTooltip.getTooltip = function(feature, context) {
@@ -46,6 +52,9 @@ wax.tilejson('http://api.tiles.mapbox.com/v2/' + layers + '.jsonp', function(til
         interaction = wax.mm.interaction(m, tilejson, {callbacks: myTooltip,clickAction: ['full', 'teaser', 'location']});
            tilejson.minzoom = 3;
            tilejson.maxzoom = 5;
+           m.addCallback("drawn", function (m) {
+         	    b.setCenterZoom(m.getCenter(), m.getZoom());
+         	  });
            m.setProvider(new wax.mm.connector(tilejson));
         wax.mm.attribution(m, tilejson).appendTo(m.parent);
         wax.mm.zoomer(m, tilejson).appendTo($('#controls')[0]);
