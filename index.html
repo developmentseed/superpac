@@ -2,39 +2,39 @@
 <html>
 <head>
 <meta charset=utf-8 />
-<title>Super PAC Hate Spending</title>
+<title>Super PAC Spending</title>
 <link rel='stylesheet' href='css/reset.css' type='text/css' />
 <link rel='stylesheet' href='css/style.css' type='text/css' />
 </head>
 <body>
 
 <div id="header"> 
- <h1>Super PAC dollars <span class='red'>AGAINST</span> candidates in 2012 election:</h1>
+    <h1>Super PAC dollars <span class='red'>AGAINST</span> candidates in 2012 election:</h1>
+    <ul id='map-navigation'>
+        <li><a id='totals'class='title active' href='#'data-layer='djohnson.superpacs-finals'>All</a></li>
+        <li><a id='santorum' href='#' data-layer='djohnson.santorum-final'>SANTORUM</a></li>
+        <li><a id='romney' href='#' data-layer='djohnson.romney-final' >ROMNEY</a></li>
+        <li><a id='gingrich'href='#' data-layer='djohnson.gingrich-final'>GINGRICH</a></li>
+        <li><a id='obama' href='#' data-layer='djohnson.obama' >OBAMA</a></li>
+        <li><a id='paul' href='#' data-layer='' >PAUL</a></li>
+    </ul>
 </div>
 
- <ul id='map-navigation'>
-      <li><a id='paul'href='#' data-layer='' >PAUL</a></li>
-      <li class='med'><a id='obama' href='#' data-layer='djohnson.obama' >OBAMA</a></li>
-      <li class='med'><a id='gingrich'href='#' data-layer='djohnson.gingrich-final'>GINGRICH</a></li> 	  
-      <li class='med'><a id='romney' href='#' data-layer='djohnson.romney-final' >ROMNEY</a></li>  
-	  <li class='big'><a id='santorum' href='#' data-layer='djohnson.santorum-final'>SANTORUM</a></li>  
-      <li><a id='totals'class='title active' href='#'data-layer='djohnson.superpacs-finals'>All</a></li>
- </ul>
 <div id="about">
-
-	<div class='description active' id='totals-description'><h1>Super PAC dollars <span class='red'>AGAINST</span> candidates in 2012 election:</h1><p><h2>As of February 22, 2012,<span class="red"> $28,755,370.14</span> has been spent in <span class='red'> opposition.</span><br /><br/>This is <span class='red'>55% </span>of all money spent by Super PACs. </h2>
-<h3><span class='new-h3'>Hover over markers to view spending details per state.</span></h3></p>
-	</div>
-
-	    <div class='description' id='gingrich-description'><h3>Total spent against Gingrich: <span class='red'> $18,002,428.98</span></h3>
-		<table>
-		<th>Super PAC</th><th>Amount</th><th>% Spending by Superpac on Opposition </th>
-		<tr><td>Americans for a Better Tomorrow, Tomorrow, Inc.</td><td>$63,642.58</td><td>54%</td></tr>
-		<tr><td>Endorse Liberty Inc.</td><td>$66,564</td><td>2%</td></tr>
-		<tr><td>Red White and Blue Fund</td><td>$78,385.60</td><td>2%</td></tr>
-		<tr><td>Restore Our Future, Inc</td><td>$17,793,836.80</td><td>97%</td></tr>
-		</table>
-		</div>
+    <div class='description active' id='totals-description'>
+        <h2>As of February 22, 2012,<span class="red"> $28,755,370.14</span> has been spent in <span class='red'> opposition.</span>This is <span class='red'>55% </span>of all money spent by Super PACs.</h2>
+        <h3>Hover over markers to view spending details per state.</h3>
+	    </div>
+	    <div class='description' id='gingrich-description'>
+	        <h3>Total spent against Gingrich: <span class='red'> $18,002,428.98</span></h3>
+            <table>
+                <th>Super PAC</th><th>Amount</th><th>% Spending by Superpac on Opposition </th>
+                <tr><td>Americans for a Better Tomorrow, Tomorrow, Inc.</td><td>$63,642.58</td><td>54%</td></tr>
+                <tr><td>Endorse Liberty Inc.</td><td>$66,564</td><td>2%</td></tr>
+                <tr><td>Red White and Blue Fund</td><td>$78,385.60</td><td>2%</td></tr>
+                <tr><td>Restore Our Future, Inc</td><td>$17,793,836.80</td><td>97%</td></tr>
+            </table>
+        </div>
 
 	  <div class='description' id='obama-description'><h3>Total spent against Obama: <span class='red'> $220,905.04</span></h3><br/><em>No geographic data was associated with this spending.</em>
 		<table>
@@ -44,7 +44,7 @@
 		</table>	
 	  </div>
 
-		<div class='description' id='paul-description'><h3>Total spent against Paul: <span class='red'>$1,728.84</span></h3><br/><em>No geographic data was associated with this spending. All hate spending paid to Google or Facebook for online advertising.</em>
+		<div class='description' id='paul-description'><h3>Total spent against Paul: <span class='red'>$1,728.84</span></h3><br/><em>No geographic data was associated with this spending. All opposition spending paid to Google or Facebook for online advertising.</em>
 		<table>
 		<th>Super PAC</th><th>Amount</th><th>% Spending by Superpac on Opposition </th>
 		<tr><td>DGA Action</td><td>$1,728.84</td><td>62%</td></tr>

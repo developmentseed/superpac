@@ -1,19 +1,14 @@
-var m,  interaction, mm = com.modestmaps;
+var m, interaction, mm = com.modestmaps;
 var baselayer = 'mapbox.world-bright';
-var borders = '';
-var subNationalPointData = '';
 var activelayer = 'djohnson.superpacs-finals';
 var layers = [
         baselayer,
-        borders,
         activelayer
     ];
-
-
+/*
     _.each(['totals','obama','romney', 'gingrich', 'paul', 'santorum'], function(candidate) {
 
         $('#' + candidate).click(function(e) {
-
             $('.description').hide();
             $('#' + candidate + '-description').show();
         });
@@ -23,29 +18,25 @@ window.onload = function() {
        $('.description').hide();
         $('#totals-description').show();
     }
-
+*/
 
 wax.tilejson('http://api.tiles.mapbox.com/v2/' + layers + '.jsonp', function(tilejson) {
         tilejson.minzoom = 3;
         tilejson.maxzoom = 5;
-         b = new mm.Map('map', new wax.mm.connector(tilejson), null, null);
-    m = new mm.Map('map', new wax.mm.connector(tilejson), null, [
-        new mm.MouseHandler(),
-        new mm.TouchHandler()
-        ]
-       
+        b = new mm.Map('map', new wax.mm.connector(tilejson), null, null);
+        m = new mm.Map('map', new wax.mm.connector(tilejson), null, [
+            new mm.MouseHandler(),
+            new mm.TouchHandler()
+            ]
     );
         m.setCenterZoom(new mm.Location(38,-76), 4);
-        tilejson.attribution = 'Maps made with open source <a href="http://tilemill.com" target="_blank"> TileMill</a>.  <a href="http://reporting.sunlightfoundation.com/super-pacs/file-downloads/">Data</a> from the Sunlight Foundation from <a href="http://www.fec.gov/data/IndependentExpenditure.do?format=html&election_yr=2012"/>FEC</a>, Februrary 22, 2012. Data covers November 22, 2011 to February 22, 2012.'
-        ;
-        
-        
+        tilejson.attribution = 'Maps made with open source <a href="http://tilemill.com" target="_blank"> TileMill</a>.  <a href="http://reporting.sunlightfoundation.com/super-pacs/file-downloads/"> Data</a> from the Sunlight Foundation from <a href="http://www.fec.gov/data/IndependentExpenditure.do?format=html&election_yr=2012"/>FEC</a>, Februrary 22, 2012.<br /> Data covers November 22, 2011 to February 22, 2012.';
+
         myTooltip = new wax.tooltip;
         myTooltip.getTooltip = function(feature, context) {
-            return $('#tooltips').html(feature).get(2);
+            return $('#tooltips').html('<div class="inner">' + feature + '</div>').get(2);
         }
         myTooltip.hideTooltip = function(feature, context) {
-            //$('#tooltips').html('<p class="message">' + emptyTooltip + '</p>');
             $('#tooltips').html('');
         }
 
@@ -53,14 +44,14 @@ wax.tilejson('http://api.tiles.mapbox.com/v2/' + layers + '.jsonp', function(til
            tilejson.minzoom = 3;
            tilejson.maxzoom = 5;
            m.addCallback("drawn", function (m) {
-         	    b.setCenterZoom(m.getCenter(), m.getZoom());
-         	  });
+             b.setCenterZoom(m.getCenter(), m.getZoom());
+           });
            m.setProvider(new wax.mm.connector(tilejson));
         wax.mm.attribution(m, tilejson).appendTo(m.parent);
         wax.mm.zoomer(m, tilejson).appendTo($('#controls')[0]);
         wax.mm.bwdetect(m, {
             auto: true,
-            png: '.png64?'
+            png:'.png64?'
         });
     });
    
@@ -76,7 +67,7 @@ function refreshMap(layers) {
                $('#tooltips').empty();
                interaction.remove();
                legend = wax.mm.legend(m, tilejson).appendTo(document.getElementById('tooltips'));
-               interaction = wax.mm.interaction(m, tilejson, { callbacks: myTooltip }); 
+               interaction = wax.mm.interaction(m, tilejson,{callbacks: myTooltip,clickAction: ['full', 'teaser', 'location']});
           });
     }
 
@@ -86,17 +77,22 @@ function refreshMap(layers) {
 $(document).ready(function () {
 
     // Layer Selection
-    $('ul li a').click(function (e) {
-        e.preventDefault();
+    $('ul li a').click(function (e){
+      $(e.currentTarget).attr('id' + '-description');
+       
         if (!$(this).hasClass('active')) {
             $('ul li a').removeClass('active');
+             $(e.currentTarget).removeClass('active');
+            
             
             $(this).addClass('active');
+            $(e.currentTarget).addClass('active');
+            
+            
             
             var activeLayer = $(this).attr('data-layer');
             layers = [
-                baselayer,
-                borders, 
+                baselayer, 
                 activeLayer
             ];
             refreshMap(layers);
