@@ -11,21 +11,21 @@
 <div id="header"> 
     <h1>Super PAC dollars <span class='red'>AGAINST</span> candidates in 2012 election:</h1>
     <ul id='map-navigation'>
-        <li><a id='totals'class='title active' href='#'data-layer='djohnson.superpacs-finals'>All</a></li>
-        <li><a id='santorum' href='#' data-layer='djohnson.santorum-final'>SANTORUM</a></li>
-        <li><a id='romney' href='#' data-layer='djohnson.romney-final' >ROMNEY</a></li>
-        <li><a id='gingrich'href='#' data-layer='djohnson.gingrich-final'>GINGRICH</a></li>
-        <li><a id='obama' href='#' data-layer='djohnson.obama' >OBAMA</a></li>
-        <li><a id='paul' href='#' data-layer='' >PAUL</a></li>
+        <li><a id='totals' class='candidate-tab active' href='#' data-layer='djohnson.all_superpacs'>All</a></li>
+        <li><a id='santorum' class='candidate-tab' href='#' data-layer='djohnson.santorum-march5'>SANTORUM</a></li>
+        <li><a id='romney' class='candidate-tab' href='#' data-layer='djohnson.romney-march5' >ROMNEY</a></li>
+        <li><a id='gingrich' class='candidate-tab' href='#' data-layer='djohnson.gingrich-march5'>GINGRICH</a></li>
+        <li><a id='obama' class='candidate-tab' href='#' data-layer='' >OBAMA</a></li>
+        <li><a id='paul' class='candidate-tab' href='#' data-layer='' >PAUL</a></li>
     </ul>
 </div>
 
 <div id="about">
-    <div class='description active' id='totals-description'>
+    <div class='description' id='description-totals'>
         <h2>As of February 22, 2012,<span class="red"> $28,755,370.14</span> has been spent in <span class='red'> opposition.</span>This is <span class='red'>55% </span>of all money spent by Super PACs.</h2>
         <h3>Hover over markers to view spending details per state.</h3>
 	    </div>
-	    <div class='description' id='gingrich-description'>
+	    <div class='description' id='description-gingrich'>
 	        <h3>Total spent against Gingrich: <span class='red'> $18,002,428.98</span></h3>
             <table>
                 <th>Super PAC</th><th>Amount</th><th>% Spending by Superpac on Opposition </th>
@@ -36,7 +36,7 @@
             </table>
         </div>
 
-	  <div class='description' id='obama-description'><h3>Total spent against Obama: <span class='red'> $220,905.04</span></h3><br/><em>No geographic data was associated with this spending.</em>
+	  <div class='description' id='description-obama'><h3>Total spent against Obama: <span class='red'> $220,905.04</span></h3><br/><em>No geographic data was associated with this spending.</em>
 		<table>
 	       <th>Super PAC</th><th>Amount</th><th>% Spending by Superpac on Opposition </th>
 	       	<tr><td>American Crossroads</td><td>$47,890</td><td>100%</td></tr>
@@ -44,14 +44,14 @@
 		</table>	
 	  </div>
 
-		<div class='description' id='paul-description'><h3>Total spent against Paul: <span class='red'>$1,728.84</span></h3><br/><em>No geographic data was associated with this spending. All opposition spending paid to Google or Facebook for online advertising.</em>
+		<div class='description' id='description-paul'><h3>Total spent against Paul: <span class='red'>$1,728.84</span></h3><br/><em>No geographic data was associated with this spending. All opposition spending paid to Google or Facebook for online advertising.</em>
 		<table>
 		<th>Super PAC</th><th>Amount</th><th>% Spending by Superpac on Opposition </th>
 		<tr><td>DGA Action</td><td>$1,728.84</td><td>62%</td></tr>
 		</table>
 		</div>
 
-		<div class='description' id='romney-description'><h3>Total spent against Romney: <span class='red'>$4,459,334.53</span></h3>
+		<div class='description' id='description-romney'><h3>Total spent against Romney: <span class='red'>$4,459,334.53</span></h3>
 		<table>
 			<th>Super PAC</th><th>Amount</th><th>% Spending by Superpac on Opposition </th>
 		<tr><td>Americans for a Better Tomorrow, Tomorrow, Inc.</td><td>$52,918.15</td><td>54%</td></tr>
@@ -61,7 +61,7 @@
 		</table>
 		</div>
 
-		<div class='description' id='santorum-description'><h3>Total spent against Santorum: <span class='red'>$6,070,072.75</span></h3>
+		<div class='description' id='description-santorum'><h3>Total spent against Santorum: <span class='red'>$6,070,072.75</span></h3>
 		<table>
 			<th>Super PAC</th><th>Amount</th><th>% Spending by Superpac on Opposition </th>
 		<tr><td>DGA Action</td><td>$6,067,725.85</td><td>62%</td></tr>

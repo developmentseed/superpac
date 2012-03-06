@@ -1,28 +1,17 @@
 var m, interaction, mm = com.modestmaps;
-var baselayer = 'mapbox.world-bright';
-var activelayer = 'djohnson.superpacs-finals';
+var baselayer = 'mapbox.world-blank-bright';
+var borders = 'djohnson.usa_borders';
+var activelayer = 'djohnson.all_superpacs';
 var layers = [
         baselayer,
+        borders,
         activelayer
     ];
-/*
-    _.each(['totals','obama','romney', 'gingrich', 'paul', 'santorum'], function(candidate) {
 
-        $('#' + candidate).click(function(e) {
-            $('.description').hide();
-            $('#' + candidate + '-description').show();
-        });
-    });
-
-window.onload = function() { 
-       $('.description').hide();
-        $('#totals-description').show();
-    }
-*/
 
 wax.tilejson('http://api.tiles.mapbox.com/v2/' + layers + '.jsonp', function(tilejson) {
         tilejson.minzoom = 3;
-        tilejson.maxzoom = 5;
+        tilejson.maxzoom = 6;
         b = new mm.Map('map', new wax.mm.connector(tilejson), null, null);
         m = new mm.Map('map', new wax.mm.connector(tilejson), null, [
             new mm.MouseHandler(),
@@ -42,7 +31,7 @@ wax.tilejson('http://api.tiles.mapbox.com/v2/' + layers + '.jsonp', function(til
 
         interaction = wax.mm.interaction(m, tilejson, {callbacks: myTooltip,clickAction: ['full', 'teaser', 'location']});
            tilejson.minzoom = 3;
-           tilejson.maxzoom = 5;
+           tilejson.maxzoom = 6;
            m.addCallback("drawn", function (m) {
              b.setCenterZoom(m.getCenter(), m.getZoom());
            });
@@ -58,7 +47,7 @@ wax.tilejson('http://api.tiles.mapbox.com/v2/' + layers + '.jsonp', function(til
 
 
 
-function refreshMap(layers) {
+function refreshMap() {
     
        wax.tilejson('http://api.tiles.mapbox.com/v2/' + layers + '.jsonp', function(tilejson) {
                tilejson.minzoom = 3;
@@ -71,31 +60,35 @@ function refreshMap(layers) {
           });
     }
 
-// TODO: Change this
-
 
 $(document).ready(function () {
+   $('.description').hide();
+   $('#description-totals').show();
 
     // Layer Selection
-    $('ul li a').click(function (e){
-      $(e.currentTarget).attr('id' + '-description');
-       
-        if (!$(this).hasClass('active')) {
-            $('ul li a').removeClass('active');
-             $(e.currentTarget).removeClass('active');
-            
-            
-            $(this).addClass('active');
-            $(e.currentTarget).addClass('active');
-            
-            
-            
+    $('a.candidate-tab').click(function(e) {
+        $('a.candidate-tab').removeClass('active');
+        $(e.currentTarget).addClass('active');
+        var candidate = $(e.currentTarget).attr('id');
+        $('.description').hide();
+        $('#description-' + candidate).show();
+          
+    });
+});
+
+$('ul li a').click(function (e) {
+      if (!$(this).hasClass('active')) {
+      $('ul li a').removeClass('active');
+     
+       $(this).addClass('active');
+   
             var activeLayer = $(this).attr('data-layer');
             layers = [
-                baselayer, 
+                baselayer,
+                borders,
                 activeLayer
             ];
-            refreshMap(layers);
+                refreshMap(layers);
         }
     });
 
@@ -131,4 +124,3 @@ $(document).ready(function () {
         e.preventDefault();
         $('#share, #overlay').removeClass('active');
     });
-});

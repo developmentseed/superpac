@@ -120,12 +120,7 @@ table td {
   color: rgb(230,69,64);
   text-shadow: #fff;
   }
-.description.active {
-  display: block;
-}
-.description {
-  display: none;
-}
+
 .description {
   padding: 20px;
   }
@@ -138,8 +133,8 @@ table td {
   z-index: 100;
   border-left: 1px solid #303030;
   border-left: 1px solid rgba(30,30,30,0.85);
-  background: #303030;
-  background: rgba(30,30,30,0.85);
+  background: #454545;
+
   -webkit-box-shadow: inset 0 0 4px 0 rgba(0,0,0,0.25);
      -moz-box-shadow: inset 0 0 4px 0 rgba(0,0,0,0.25);
           box-shadow: inset 0 0 4px 0 rgba(0,0,0,0.25);
@@ -175,8 +170,8 @@ table td {
 Navigation
 ----------------------------------*/
 #header {
-  background: #303030;
-  background: rgba(0,0,0,0.65);
+  background: #444;
+  background: rgba(35,35,35,0.9);
   position: absolute;
   width: 100%;
   height: 50px;
@@ -201,7 +196,7 @@ Navigation
 #map-navigation {
   float: right;
   width: 40%;
-  border-left: 1px solid #75807E;
+
   color: #fff;
   padding: 0;
   margin: 0;
@@ -219,8 +214,7 @@ Navigation
       height: 50px;
       line-height: 50px;
       padding: 0 10px;
-      border-left: 1px solid #75807E;
-      border-left: 1px solid 1px solid rgba(0, 0, 0, 0.60);
+     
       -moz-transition: background-color 0.1s linear;
       -o-transition: background-color 0.1s linear;
       -webkit-transition: background-color 0.1s linear;
@@ -229,18 +223,22 @@ Navigation
       font-weight: 500;
       }
       #map-navigation li:first-child a {
-        border-left: none;
+          background:  rgb(42,42,42);
+        
         }
       #map-navigation li a:hover {
           background-color: #6B7876;
           }
       #map-navigation li a.active {
-          background: rgba(40,40,40,.75);
-          border-right: 1px solid #444;
-          border-left: 1px solid #444;
+        background:  #454545;
+       
+         
           }
         #map-navigation li a.one {
           border-right: none;
+             background: #555;
+              background: rgba(42,42,42,1);
+          
           }
 
 
@@ -251,7 +249,7 @@ Navigation
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 0;
+  top:200 ;
   left: 0;
   right: 0;
   bottom: 0;
@@ -355,6 +353,9 @@ Navigation
     }
     #tooltips h3{
       color: #fefefe;
+      margin-top: -15px;
+      font-size: 16px;
+        color: #A5A5A5;
       }
       #tooltips th{
         color: #D8D8D8;
