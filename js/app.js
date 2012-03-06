@@ -19,7 +19,7 @@ wax.tilejson('http://api.tiles.mapbox.com/v2/' + layers + '.jsonp', function(til
             ]
     );
         m.setCenterZoom(new mm.Location(38,-76), 4);
-        tilejson.attribution = 'Maps made with open source <a href="http://tilemill.com" target="_blank"> TileMill</a>.  <a href="http://reporting.sunlightfoundation.com/super-pacs/file-downloads/"> Data</a> from the Sunlight Foundation from <a href="http://www.fec.gov/data/IndependentExpenditure.do?format=html&election_yr=2012"/>FEC</a>, collected March 5, 2012.<br /> Data covers November 22, 2011 to March 5, 2012.';
+        tilejson.attribution = 'Maps made with open source <a href="http://tilemill.com" target="_blank"> TileMill</a>.  <a href="http://reporting.sunlightfoundation.com/super-pacs/file-downloads/"> Data</a> from the Sunlight Foundation from <a href="http://www.fec.gov/data/IndependentExpenditure.do?format=html&election_yr=2012"/>FEC</a>, collected March 5, 2012.<br /> Data covers November 22, 2011 to March 2, 2012.';
 
         myTooltip = new wax.tooltip;
         myTooltip.getTooltip = function(feature, context) {
