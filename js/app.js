@@ -1,7 +1,7 @@
 var m, interaction, mm = com.modestmaps;
 var baselayer = 'mapbox.world-blank-bright';
 var borders = 'djohnson.usa_borders';
-var activelayer = 'djohnson.superpacs-march5-all';
+var activelayer = 'djohnson.superpacs_march_05';
 var layers = [
         baselayer,
         borders,
