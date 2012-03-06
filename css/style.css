@@ -29,6 +29,7 @@ h2 {
 h3 {
   font-size: 16px;
   color: #fefefe;
+  margin-top: 5px;
   }
 h4 {
   font-size: 18px;
@@ -119,7 +120,7 @@ table td {
 -------------------------------------*/
 .red {
   color: rgb(230,69,64);
-  font-size: 120%;
+  font-size: 110%;
   }
 .red-title {
  color: rgb(230,69,64);
@@ -158,7 +159,7 @@ table td {
 #about em {
   font-size: 16px;
   color: #a5a5a5;
-  line-height: 28px;
+  line-height: 18px;
   }
 #about h6 {
   padding-top: 16px;
@@ -196,7 +197,7 @@ Navigation
 #header h1 {
   display: block;
   position: absolute;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: regular;
   line-height: 50px;
   color: #fff;
@@ -205,10 +206,10 @@ Navigation
 #map-navigation {
   float: right;
   width: 40%;
-
   color: #fff;
   padding: 0;
   margin: 0;
+  overflow: visible;
   }
   #map-navigation li {
     float: left;
