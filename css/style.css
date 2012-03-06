@@ -65,19 +65,19 @@ a.close {
   ::-webkit-scrollbar {
     height: 8px;
     width: 10px;
-     background: rgb(20,20,20);
+     background: #444;
     }
   ::-webkit-scrollbar:hover {
     background: rgb(20,20,20);
     }
   ::-webkit-scrollbar-thumb {
-    background: #444;
+    background: #000;
     }
   ::-webkit-scrollbar-thumb:hover {
     background: #3c1108;
     }
-  ::-webkit-scrollbar-thumb:vertical    { height: 25px; }
-  ::-webkit-scrollbar-thumb:horizontal  { width: 25px; }
+  ::-webkit-scrollbar-thumb:vertical    { height: 15px; }
+  ::-webkit-scrollbar-thumb:horizontal  { width: 15px; }
 
 /*-----------------------------------
   Data Table: For the project popup.
@@ -131,9 +131,8 @@ table td {
   right: 0; 
   width: 40%;
   z-index: 100;
-  border-left: 1px solid #303030;
-  border-left: 1px solid rgba(30,30,30,0.85);
-  background: #454545;
+  background: #4F4F4F;
+
 
   -webkit-box-shadow: inset 0 0 4px 0 rgba(0,0,0,0.25);
      -moz-box-shadow: inset 0 0 4px 0 rgba(0,0,0,0.25);
@@ -171,7 +170,7 @@ Navigation
 ----------------------------------*/
 #header {
   background: #444;
-  background: rgba(35,35,35,0.9);
+  background: rgba(35,35,35,1);
   position: absolute;
   width: 100%;
   height: 50px;
@@ -191,7 +190,7 @@ Navigation
   font-size: 20px;
   line-height: 50px;
   color: #fff;
-  left: 10px;
+  left: 12px;
   }
 #map-navigation {
   float: right;
@@ -214,7 +213,8 @@ Navigation
       height: 50px;
       line-height: 50px;
       padding: 0 10px;
-     
+      border-right: 1px solid #000;
+      
       -moz-transition: background-color 0.1s linear;
       -o-transition: background-color 0.1s linear;
       -webkit-transition: background-color 0.1s linear;
@@ -223,22 +223,18 @@ Navigation
       font-weight: 500;
       }
       #map-navigation li:first-child a {
-          background:  rgb(42,42,42);
-        
+        border-left: 1px solid #000;
         }
       #map-navigation li a:hover {
           background-color: #6B7876;
           }
       #map-navigation li a.active {
-        background:  #454545;
-       
-         
+        background: #4F4F4F;
+        border-right: 1px solid #000;
+          
           }
         #map-navigation li a.one {
           border-right: none;
-             background: #555;
-              background: rgba(42,42,42,1);
-          
           }
 
 
@@ -346,7 +342,7 @@ Navigation
   overflow: auto;
   right: 0px;
   z-index: 100;
-  height: 100%;
+  height: 80%;
   }
   #tooltips .inner {
     padding: 20px;
@@ -360,7 +356,9 @@ Navigation
       #tooltips th{
         color: #D8D8D8;
         }
-  
+        #tooltips table {
+          margin-bottom: 190px;
+          }
 
 /*CSS Animations*/
 .map-tile-loaded {
