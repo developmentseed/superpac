@@ -20,7 +20,7 @@ h1 {
   line-height: 29px;
   }
 h2 {
-  font-size: 18px;
+  font-size: 16px;
   color: #fefefe;
   margin: 10px 0;
   line-height: 24px;
@@ -110,7 +110,7 @@ table td {
   }
 #about table tr + tr td {
   border-top: 1px solid #7F7F7F;
-  color: #A5A5A5;
+  color: #D2D2D2;
   }
 
 /*-----------------------------------
@@ -118,9 +118,12 @@ table td {
 -------------------------------------*/
 .red {
   color: rgb(230,69,64);
-  text-shadow: #fff;
+  font-size: 140%;
   }
-
+.red-title {
+ color: rgb(230,69,64);
+ font-weight: 600;
+    }
 .description {
   padding: 20px;
   }
@@ -138,9 +141,11 @@ table td {
      -moz-box-shadow: inset 0 0 4px 0 rgba(0,0,0,0.25);
           box-shadow: inset 0 0 4px 0 rgba(0,0,0,0.25);
   }
+
 #about h3 {
-  padding-top: 20px;
+  padding-top: 10px;
   color: #fefefe;
+  line-height: 24px;
   }
 .new-h3 {
   font-size: 18px;
@@ -187,7 +192,8 @@ Navigation
 #header h1 {
   display: block;
   position: absolute;
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: regular;
   line-height: 50px;
   color: #fff;
   left: 12px;
@@ -320,7 +326,7 @@ Navigation
         cursor: default;
         }
 .wax-attribution {
-  z-index: 10000;
+  z-index: 200;
   position: absolute;
   bottom: 10px;
   left: 10px;
@@ -342,23 +348,23 @@ Navigation
   overflow: auto;
   right: 0px;
   z-index: 100;
-  height: 80%;
+  height: 90%;
   }
-  #tooltips .inner {
+    #tooltips .inner {
     padding: 20px;
-    }
+     }
     #tooltips h3{
-      color: #fefefe;
-      margin-top: -15px;
-      font-size: 16px;
-        color: #A5A5A5;
+     color: #fefefe;
+     margin-top: -15px;
+     padding-top:15px;
+     font-size: 16px;
       }
-      #tooltips th{
-        color: #D8D8D8;
-        }
-        #tooltips table {
-          margin-bottom: 190px;
-          }
+    #tooltips th{
+     color: #D8D8D8;
+      }
+    #tooltips table {
+      margin-bottom: 190px;
+      }
 
 /*CSS Animations*/
 .map-tile-loaded {
@@ -406,13 +412,14 @@ Navigation
     filter:alpha(opacity=50);
     }
 #share {
+  background: #454545;
   position: absolute;
   top: -100%;
   left: 50%;
   z-index: 9999;
   width: 50%;
   margin-left: -25%;
-  background: rgba(20,20,20,.95);
+  padding: 20px;
   -moz-transition: top 0.5s ease;
   -o-transition: top 0.5s ease;
   -webkit-transition: top 0.5s ease;
@@ -438,9 +445,8 @@ Navigation
 #facebook {
   display: inline-block;
   position: relative;
-  padding: 5px 18px;
+  padding-top: 10px;
   margin-right: 5px;
-  padding-left: 10px;
   background: white;
   color: white;
   font-weight: bold;
