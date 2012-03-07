@@ -353,7 +353,7 @@ Navigation
   overflow: auto;
   right: 0px;
   z-index: 100;
-  height: 90%;
+  height: 100%;
   }
     #tooltips .inner {
      padding: 20px;
@@ -428,10 +428,6 @@ Navigation
   width: 50%;
   margin-left: -25%;
   padding: 20px;
-  -moz-transition: top 0.5s ease;
-  -o-transition: top 0.5s ease;
-  -webkit-transition: top 0.5s ease;
-  transition: top 0.5s ease;
   -moz-box-shadow: 0 1px 8px rgba(0, 0, 0, .3);
   -webkit-box-shadow: 0 1px 8px rgba(0, 0, 0, .3);
   box-shadow: 0 1px 8px rgba(0, 0, 0, .3);
@@ -455,11 +451,14 @@ Navigation
   position: relative;
   padding-top: 10px;
   margin-right: 5px;
+  margin-left: 5px;
+  text-align: center;
   background: white;
   color: white;
   font-weight: bold;
   border: 2px solid #CCC;
   margin-bottom: 20px;
+  text-decoration: none;
   }
 #twitter {
   background: #0ac;
